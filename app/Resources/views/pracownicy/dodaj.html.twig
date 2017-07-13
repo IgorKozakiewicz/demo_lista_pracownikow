@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Dodaj pracownika</h1>
+        {{ form_start(pracownicyForm, {'action': path('zapisz_pracownika')}) }}
+
+        {{ form_widget(pracownicyForm) }}
+
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+        {{ form_end(pracownicyForm) }}
+    </div>
+
+{% endblock %}

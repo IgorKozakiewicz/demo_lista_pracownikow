@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>Lista Pracowników</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Oddział</th>
+            <th>Data Dodania</th>
+        </tr>
+        </thead>
+
+        {% for pracownik in pracownicy %}
+            <tr>
+                <td>{{ pracownik.id }}</td>
+                <td>{{ pracownik.imie }}</td>
+                <td>{{ pracownik.nazwisko }}</td>
+                <td>{{ pracownik.oddzialy.nazwa }}</td>
+                <td>{{ pracownik.dataDodania|date('d-m-Y') }}</td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+{% endblock %}
